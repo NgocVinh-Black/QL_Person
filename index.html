@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Title</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+
+    <!-- Bootstrap CSS v5.2.1 -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT"
+      crossorigin="anonymous"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+      integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+
+  <body>
+    <div class="container">
+      <h1 style="text-align: center; margin: 100px 0; font-size: 50px">
+        Quản lý học viện nghiên cứu & giảng dạy
+      </h1>
+
+      <!-- Button trigger modal -->
+      <button
+        id="btnThemNguoiDung"
+        type="button"
+        class="btn btn-primary fs-4"
+        data-bs-toggle="modal"
+        data-bs-target="#exampleModal"
+      >
+        Thêm người dùng
+      </button>
+
+      <!-- Modal -->
+      <div
+        class="modal fade"
+        id="exampleModal"
+        tabindex="-1"
+        aria-labelledby="exampleModalLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog">
+          <div class="modal-content" style="width: 130%">
+            <div class="modal-header">
+              <h1 class="modal-title fs-3" id="exampleModalLabel">
+                Thên người dùng
+              </h1>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="modal-body" id="inputId">
+              <!-- input -->
+              <div class="mb-3">
+                <input
+                  type="number"
+                  class="form-control fs-4"
+                  name=""
+                  id="nhapMaId"
+                  aria-describedby="helpId"
+                  placeholder="Nhập mã số"
+                />
+                <p
+                  id=""
+                  class="text-start mt-1 mb-2 ms-2 fs-5"
+                  style="color: red"
+                ></p>
+              </div>
+              <div class="mb-3">
+                <input
+                  type="text"
+                  class="form-control fs-4"
+                  name=""
+                  id="nhapTenId"
+                  aria-describedby="helpId"
+                  placeholder="Nhập tên"
+                />
+                <p
+                  id=""
+                  class="text-start mt-1 mb-2 ms-2 fs-5"
+                  style="color: red"
+                ></p>
+              </div>
+              <div class="mb-3">
+                <input
+                  type="email"
+                  class="form-control fs-4"
+                  name=""
+                  id="nhapEmailId"
+                  aria-describedby="helpId"
+                  placeholder="Nhập email"
+                />
+                <p
+                  id=""
+                  class="text-start mt-1 mb-2 ms-2 fs-5"
+                  style="color: red"
+                ></p>
+              </div>
+              <div class="mb-3">
+                <input
+                  type="text"
+                  class="form-control fs-4"
+                  name=""
+                  id="nhapDiaChiId"
+                  aria-describedby="helpId"
+                  placeholder="Nhập địa chỉ"
+                />
+                <p
+                  id=""
+                  class="text-start mt-1 mb-2 ms-2 fs-5"
+                  style="color: red"
+                ></p>
+              </div>
+              <div class="mb-3">
+                <select
+                  class="form-select form-select-lg fs-4"
+                  name=""
+                  id="chonDTId"
+                >
+                  <option value="">Chọn đối tượng người dùng</option>
+                  <option value="Student">Student</option>
+                  <option value="Employee">Employee</option>
+                  <option value="Customer">Customer</option>
+                </select>
+                <p
+                  id=""
+                  class="text-start mt-1 mb-2 ms-2 fs-5"
+                  style="color: red"
+                ></p>
+              </div>
+              <!-- Person -->
+              <div class="renderPerson">
+                <!-- Student -->
+                <div class="row inputStudent fs-4" style="display: none">
+                  <!-- Toán -->
+                  <div class="mb-3 col-4">
+                    <label for="" class="form-label">Điểm toán</label>
+                    <input
+                      type="number"
+                      class="form-control"
+                      name=""
+                      id="nhapDiemToan"
+                      aria-describedby="helpId"
+                      placeholder=""
+                    />
+                    <p
+                      id=""
+                      class="text-start mt-1 mb-2 ms-2 fs-5"
+                      style="color: red"
+                    ></p>
+                  </div>
+                  <!-- Lý -->
+                  <div class="mb-3 col-4">
+                    <label for="" class="form-label">Điểm lý</label>
+                    <input
+                      type="number"
+                      class="form-control"
+                      name=""
+                      id="nhapDiemLy"
+                      aria-describedby="helpId"
+                      placeholder=""
+                    />
+                    <p
+                      id=""
+                      class="text-start mt-1 mb-2 ms-2 fs-5"
+                      style="color: red"
+                    ></p>
+                  </div>
+                  <!-- Hóa -->
+                  <div class="mb-3 col-4">
+                    <label for="" class="form-label">Điểm hóa</label>
+                    <input
+                      type="number"
+                      class="form-control"
+                      name=""
+                      id="nhapDiemHoa"
+                      aria-describedby="helpId"
+                      placeholder=""
+                    />
+                    <p
+                      id=""
+                      class="text-start mt-1 mb-2 ms-2 fs-5"
+                      style="color: red"
+                    ></p>
+                  </div>
+                </div>
+                <!-- Employee -->
+                <div class="inputEmployee row fs-4" style="display: none">
+                  <!-- Số ngày làm việc -->
+                  <div class="mb-3 col-6">
+                    <label for="" class="form-label">Số ngày làm việc:</label>
+                    <input
+                      type="number"
+                      class="form-control"
+                      name=""
+                      id="nhapSoNgayLam"
+                      aria-describedby="helpId"
+                      placeholder=""
+                    />
+                    <p
+                      id=""
+                      class="text-start mt-1 mb-2 ms-2 fs-5"
+                      style="color: red"
+                    ></p>
+                  </div>
+                  <!-- Lương một ngày -->
+                  <div class="mb-3 col-6">
+                    <label for="" class="form-label">Lương một ngày:</label>
+                    <input
+                      type="number"
+                      class="form-control"
+                      name=""
+                      id="nhapLuongTheoNgay"
+                      aria-describedby="helpId"
+                      placeholder=""
+                    />
+                    <p
+                      id=""
+                      class="text-start mt-1 mb-2 ms-2 fs-5"
+                      style="color: red"
+                    ></p>
+                  </div>
+                </div>
+                <!-- Customer -->
+                <div class="inputCustomer row fs-4" style="display: none">
+                  <!-- Tên công ty -->
+                  <div class="mb-3 col-8">
+                    <label for="" class="form-label">Tên công ty:</label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      name=""
+                      id="nhapTenCongTy"
+                      aria-describedby="helpId"
+                      placeholder=""
+                    />
+                    <p
+                      id=""
+                      class="text-start mt-1 mb-2 ms-2 fs-5"
+                      style="color: red"
+                    ></p>
+                  </div>
+                  <!-- Giá trị hóa đơn -->
+                  <div class="mb-3 col-4">
+                    <label for="" class="form-label">Giá trị hóa đơn:</label>
+                    <input
+                      type="number"
+                      class="form-control"
+                      name=""
+                      id="nhapGiaTriHoaDon"
+                      aria-describedby="helpId"
+                      placeholder=""
+                    />
+                    <p
+                      id=""
+                      class="text-start mt-1 mb-2 ms-2 fs-5"
+                      style="color: red"
+                    ></p>
+                  </div>
+                </div>
+                <!-- Đánh giá -->
+                <div class="mb-3 fs-4" style="display: none">
+                  <label for="" class="form-label">Đánh giá</label>
+                  <textarea
+                    class="form-control"
+                    name=""
+                    id="nhapDanhGia"
+                    rows="3"
+                  ></textarea>
+                </div>
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button
+              id="
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              "
+                type="button"
+                class="btn btn-secondary fs-4"
+                data-bs-dismiss="modal"
+              >
+                Close
+              </button>
+              <button
+                id="btnThemPerson"
+                type="button"
+                class="btn btn-primary fs-4"
+              >
+                Thêm
+              </button>
+              <button
+                id="btnCapNhatPerson"
+                type="button"
+                class="btn btn-success fs-4"
+              >
+                Cập nhật
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Search -->
+      <div class="mb-3 mt-3">
+        <input
+          type="text"
+          class="form-control fs-5"
+          name=""
+          id=""
+          aria-describedby="helpId"
+          placeholder="Search"
+        />
+      </div>
+      <!-- All -->
+      <div class="mb-3">
+        <select class="form-select form-select-lg fs-5 w-25" name="" id="">
+          <option selected>All</option>
+          <option value="">Student</option>
+          <option value="">Employee</option>
+          <option value="">Customer</option>
+        </select>
+      </div>
+      <!-- Table -->
+
+      <table class="table table-bordered table-sm">
+        <thead>
+          <tr class="bg-primary text-center text-white fs-5">
+            <th class="py-3">Mã</th>
+            <th class="py-3">Họ và tên</th>
+            <th class="py-3">Địa chỉ</th>
+            <th class="py-3">Email</th>
+            <th class="py-3">Người dùng</th>
+            <th class="py-3">Thông tin riêng</th>
+            <th class="py-3"><i class="fa-solid fa-gear"></i></th>
+          </tr>
+        </thead>
+        <tbody id="renderListStudent">
+          <!-- <tr style="vertical-align: middle;">
+            <th class="text-center">1</th>
+            <th>Mark</th>
+            <th>Otto</th>
+            <th>@mdo</th>
+            <th>@mdo</th>
+            <th>@mdo</th>
+            <th class="text-center" style="display: flex; justify-content: space-evenly;">
+              <button class="px-3 py-2 fs-4 border-0" style="border-radius: 10px; background-color: greenyellow;"><i class="fa-solid fa-pen-to-square"></i></button>
+              <button class="px-3 py-2 fs-4 border-0" style="border-radius: 10px; background-color: red;"><i class="fa-solid fa-trash-can"></i></button>
+            </th>
+          </tr> -->
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Bootstrap JavaScript Libraries -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+      integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
+      crossorigin="anonymous"
+    ></script>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.min.js"
+      integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz"
+      crossorigin="anonymous"
+    ></script>
+
+    <script type="module" src="./controllers/index.js"></script>
+  </body>
+</html>
