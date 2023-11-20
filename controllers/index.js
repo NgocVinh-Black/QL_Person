@@ -1,6 +1,34 @@
 import { Person } from "../models/Person.js";
 import { ListPerson } from "../models/ListPerson.js";
 
+document.getElementById("chonDTId").onchange = (event) => {
+  const { value } = event.target;
+  if (value == "Student") {
+    document.getElementById("renderStudent").style.display = "flex";
+    document.getElementById("renderCustomer").style.display = "none";
+    document.getElementById("renderEmployee").style.display = "none";
+    document.getElementById("renderDanhGia").style.display = "none";
+  }
+  if (value == "Employee") {
+    document.getElementById("renderEmployee").style.display = "flex";
+    document.getElementById("renderCustomer").style.display = "none";
+    document.getElementById("renderStudent").style.display = "none";
+    document.getElementById("renderDanhGia").style.display = "none";
+  }
+  if (value == "Customer") {
+    document.getElementById("renderCustomer").style.display = "flex";
+    document.getElementById("renderEmployee").style.display = "none";
+    document.getElementById("renderStudent").style.display = "none";
+    document.getElementById("renderDanhGia").style.display = "block";
+  }
+  if (value == "") {
+    document.getElementById("renderCustomer").style.display = "none";
+    document.getElementById("renderEmployee").style.display = "none";
+    document.getElementById("renderStudent").style.display = "none";
+    document.getElementById("renderDanhGia").style.display = "none";
+  }
+};
+
 const layoutThemPerson = () => {
   document.getElementById("btnCapNhatPerson").style.display = "none";
   document.getElementById("btnThemPerson").style.display = "block";
@@ -9,10 +37,6 @@ const layoutThemPerson = () => {
 };
 
 document.getElementById("btnThemNguoiDung").onclick = layoutThemPerson;
-
-// const chonDoiTuong = () =>{
-//   document.getElementById('')
-// }
 
 // khoi tao listPerson
 const listPerson = new ListPerson();
@@ -32,8 +56,8 @@ const layDuLieuPerson = () => {
 
 // tat modal va clear du lieu trong form
 const tatVaClearDulieu = () => {
+  $("#exampleModal").modal("hide");
   document.getElementById("inputForm").reset();
-  document.getElementById("btnClose").click();
 };
 
 // Them Person vao ListPerson
@@ -53,7 +77,8 @@ const hienThiPerson = (arr = listPerson.arrListPerson) => {
   for (let person of arr) {
     let personNew = new Person();
     Object.assign(personNew, person);
-    const { nhapMaId, nhapTenId, nhapDiaChiId, nhapEmailId, chonDTId } =
+    // làm sao để truyền tinhDiemTrungBinh và tinhLuong vào hàm đoạn này anh
+    const { nhapMaId, nhapTenId, nhapDiaChiId, nhapEmailId, chonDTId} =
       personNew;
     content += `
     <tr style="vertical-align: middle;">
@@ -115,6 +140,7 @@ const layThongTinPerson = (id) => {
     }
   }
   // document.getElementById("btnThemNguoiDung").click();
+  $("#exampleModal").modal("show");
 };
 
 window.layThongTinPerson = layThongTinPerson;
@@ -129,3 +155,15 @@ const capNhatPerson = () => {
 };
 
 document.getElementById("btnCapNhatPerson").onclick = capNhatPerson;
+
+document.getElementById("renderFilter").onchange = (event) => {
+  const { value } = event.target;
+  const arrFilter = listPerson.arrListPerson.filter((item, index) => {
+    return item.chonDTId == value;
+  });
+  if (arrFilter.length > 0) {
+    hienThiPerson(arrFilter);
+  } else {
+    hienThiPerson();
+  }
+};

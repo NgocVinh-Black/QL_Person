@@ -147,7 +147,7 @@
                 <!-- Person -->
                 <div class="renderPerson">
                   <!-- Student -->
-                  <div class="row inputStudent fs-4" style="display: none">
+                  <div id="renderStudent" class="row inputStudent fs-4" style="display: none">
                     <!-- Toán -->
                     <div class="mb-3 col-4">
                       <label for="" class="form-label">Điểm toán</label>
@@ -201,7 +201,7 @@
                     </div>
                   </div>
                   <!-- Employee -->
-                  <div class="inputEmployee row fs-4" style="display: none">
+                  <div id="renderEmployee" class="inputEmployee row fs-4" style="display: none">
                     <!-- Số ngày làm việc -->
                     <div class="mb-3 col-6">
                       <label for="" class="form-label">Số ngày làm việc:</label>
@@ -238,7 +238,7 @@
                     </div>
                   </div>
                   <!-- Customer -->
-                  <div class="inputCustomer row fs-4" style="display: none">
+                  <div id="renderCustomer" class="inputCustomer row fs-4" style="display: none">
                     <!-- Tên công ty -->
                     <div class="mb-3 col-8">
                       <label for="" class="form-label">Tên công ty:</label>
@@ -275,7 +275,7 @@
                     </div>
                   </div>
                   <!-- Đánh giá -->
-                  <div class="mb-3 fs-4" style="display: none">
+                  <div id="renderDanhGia" class="mb-3 fs-4" style="display: none">
                     <label for="" class="form-label">Đánh giá</label>
                     <textarea
                       class="form-control"
@@ -329,11 +329,11 @@
       </div>
       <!-- All -->
       <div class="mb-3">
-        <select class="form-select form-select-lg fs-5 w-25" name="" id="">
-          <option selected>All</option>
-          <option value="">Student</option>
-          <option value="">Employee</option>
-          <option value="">Customer</option>
+        <select class="form-select form-select-lg fs-5 w-25" name="" id="renderFilter">
+          <option value="">All</option>
+          <option value="Student">Student</option>
+          <option value="Employee">Employee</option>
+          <option value="Customer">Customer</option>
         </select>
       </div>
       <!-- Table -->
@@ -379,6 +379,7 @@
       integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz"
       crossorigin="anonymous"
     ></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
 
     <script type="module" src="./controllers/index.js"></script>
   </body>
