@@ -64,230 +64,233 @@
                 aria-label="Close"
               ></button>
             </div>
-            <div class="modal-body" id="inputId">
-              <!-- input -->
-              <div class="mb-3">
-                <input
-                  type="number"
-                  class="form-control fs-4"
-                  name=""
-                  id="nhapMaId"
-                  aria-describedby="helpId"
-                  placeholder="Nhập mã số"
-                />
-                <p
-                  id=""
-                  class="text-start mt-1 mb-2 ms-2 fs-5"
-                  style="color: red"
-                ></p>
-              </div>
-              <div class="mb-3">
-                <input
-                  type="text"
-                  class="form-control fs-4"
-                  name=""
-                  id="nhapTenId"
-                  aria-describedby="helpId"
-                  placeholder="Nhập tên"
-                />
-                <p
-                  id=""
-                  class="text-start mt-1 mb-2 ms-2 fs-5"
-                  style="color: red"
-                ></p>
-              </div>
-              <div class="mb-3">
-                <input
-                  type="email"
-                  class="form-control fs-4"
-                  name=""
-                  id="nhapEmailId"
-                  aria-describedby="helpId"
-                  placeholder="Nhập email"
-                />
-                <p
-                  id=""
-                  class="text-start mt-1 mb-2 ms-2 fs-5"
-                  style="color: red"
-                ></p>
-              </div>
-              <div class="mb-3">
-                <input
-                  type="text"
-                  class="form-control fs-4"
-                  name=""
-                  id="nhapDiaChiId"
-                  aria-describedby="helpId"
-                  placeholder="Nhập địa chỉ"
-                />
-                <p
-                  id=""
-                  class="text-start mt-1 mb-2 ms-2 fs-5"
-                  style="color: red"
-                ></p>
-              </div>
-              <div class="mb-3">
-                <select
-                  class="form-select form-select-lg fs-4"
-                  name=""
-                  id="chonDTId"
-                >
-                  <option value="">Chọn đối tượng người dùng</option>
-                  <option value="Student">Student</option>
-                  <option value="Employee">Employee</option>
-                  <option value="Customer">Customer</option>
-                </select>
-                <p
-                  id=""
-                  class="text-start mt-1 mb-2 ms-2 fs-5"
-                  style="color: red"
-                ></p>
-              </div>
-              <!-- Person -->
-              <div class="renderPerson">
-                <!-- Student -->
-                <div class="row inputStudent fs-4" style="display: none">
-                  <!-- Toán -->
-                  <div class="mb-3 col-4">
-                    <label for="" class="form-label">Điểm toán</label>
-                    <input
-                      type="number"
-                      class="form-control"
-                      name=""
-                      id="nhapDiemToan"
-                      aria-describedby="helpId"
-                      placeholder=""
-                    />
-                    <p
-                      id=""
-                      class="text-start mt-1 mb-2 ms-2 fs-5"
-                      style="color: red"
-                    ></p>
-                  </div>
-                  <!-- Lý -->
-                  <div class="mb-3 col-4">
-                    <label for="" class="form-label">Điểm lý</label>
-                    <input
-                      type="number"
-                      class="form-control"
-                      name=""
-                      id="nhapDiemLy"
-                      aria-describedby="helpId"
-                      placeholder=""
-                    />
-                    <p
-                      id=""
-                      class="text-start mt-1 mb-2 ms-2 fs-5"
-                      style="color: red"
-                    ></p>
-                  </div>
-                  <!-- Hóa -->
-                  <div class="mb-3 col-4">
-                    <label for="" class="form-label">Điểm hóa</label>
-                    <input
-                      type="number"
-                      class="form-control"
-                      name=""
-                      id="nhapDiemHoa"
-                      aria-describedby="helpId"
-                      placeholder=""
-                    />
-                    <p
-                      id=""
-                      class="text-start mt-1 mb-2 ms-2 fs-5"
-                      style="color: red"
-                    ></p>
-                  </div>
-                </div>
-                <!-- Employee -->
-                <div class="inputEmployee row fs-4" style="display: none">
-                  <!-- Số ngày làm việc -->
-                  <div class="mb-3 col-6">
-                    <label for="" class="form-label">Số ngày làm việc:</label>
-                    <input
-                      type="number"
-                      class="form-control"
-                      name=""
-                      id="nhapSoNgayLam"
-                      aria-describedby="helpId"
-                      placeholder=""
-                    />
-                    <p
-                      id=""
-                      class="text-start mt-1 mb-2 ms-2 fs-5"
-                      style="color: red"
-                    ></p>
-                  </div>
-                  <!-- Lương một ngày -->
-                  <div class="mb-3 col-6">
-                    <label for="" class="form-label">Lương một ngày:</label>
-                    <input
-                      type="number"
-                      class="form-control"
-                      name=""
-                      id="nhapLuongTheoNgay"
-                      aria-describedby="helpId"
-                      placeholder=""
-                    />
-                    <p
-                      id=""
-                      class="text-start mt-1 mb-2 ms-2 fs-5"
-                      style="color: red"
-                    ></p>
-                  </div>
-                </div>
-                <!-- Customer -->
-                <div class="inputCustomer row fs-4" style="display: none">
-                  <!-- Tên công ty -->
-                  <div class="mb-3 col-8">
-                    <label for="" class="form-label">Tên công ty:</label>
-                    <input
-                      type="text"
-                      class="form-control"
-                      name=""
-                      id="nhapTenCongTy"
-                      aria-describedby="helpId"
-                      placeholder=""
-                    />
-                    <p
-                      id=""
-                      class="text-start mt-1 mb-2 ms-2 fs-5"
-                      style="color: red"
-                    ></p>
-                  </div>
-                  <!-- Giá trị hóa đơn -->
-                  <div class="mb-3 col-4">
-                    <label for="" class="form-label">Giá trị hóa đơn:</label>
-                    <input
-                      type="number"
-                      class="form-control"
-                      name=""
-                      id="nhapGiaTriHoaDon"
-                      aria-describedby="helpId"
-                      placeholder=""
-                    />
-                    <p
-                      id=""
-                      class="text-start mt-1 mb-2 ms-2 fs-5"
-                      style="color: red"
-                    ></p>
-                  </div>
-                </div>
-                <!-- Đánh giá -->
-                <div class="mb-3 fs-4" style="display: none">
-                  <label for="" class="form-label">Đánh giá</label>
-                  <textarea
-                    class="form-control"
+            <form id="inputForm" action="">
+              <div class="modal-body" id="inputId">
+                <!-- input -->
+                <div class="mb-3">
+                  <input
+                    type="number"
+                    class="form-control fs-4"
                     name=""
-                    id="nhapDanhGia"
-                    rows="3"
-                  ></textarea>
+                    id="nhapMaId"
+                    aria-describedby="helpId"
+                    placeholder="Nhập mã số"
+                  />
+                  <p
+                    id=""
+                    class="text-start mt-1 mb-2 ms-2 fs-5"
+                    style="color: red"
+                  ></p>
+                </div>
+                <div class="mb-3">
+                  <input
+                    type="text"
+                    class="form-control fs-4"
+                    name=""
+                    id="nhapTenId"
+                    aria-describedby="helpId"
+                    placeholder="Nhập tên"
+                  />
+                  <p
+                    id=""
+                    class="text-start mt-1 mb-2 ms-2 fs-5"
+                    style="color: red"
+                  ></p>
+                </div>
+                <div class="mb-3">
+                  <input
+                    type="email"
+                    class="form-control fs-4"
+                    name=""
+                    id="nhapEmailId"
+                    aria-describedby="helpId"
+                    placeholder="Nhập email"
+                  />
+                  <p
+                    id=""
+                    class="text-start mt-1 mb-2 ms-2 fs-5"
+                    style="color: red"
+                  ></p>
+                </div>
+                <div class="mb-3">
+                  <input
+                    type="text"
+                    class="form-control fs-4"
+                    name=""
+                    id="nhapDiaChiId"
+                    aria-describedby="helpId"
+                    placeholder="Nhập địa chỉ"
+                  />
+                  <p
+                    id=""
+                    class="text-start mt-1 mb-2 ms-2 fs-5"
+                    style="color: red"
+                  ></p>
+                </div>
+                <div class="mb-3">
+                  <select
+                    class="form-select form-select-lg fs-4"
+                    name=""
+                    id="chonDTId"
+                  >
+                    <option value="">Chọn đối tượng người dùng</option>
+                    <option value="Student">Student</option>
+                    <option value="Employee">Employee</option>
+                    <option value="Customer">Customer</option>
+                  </select>
+                  <p
+                    id=""
+                    class="text-start mt-1 mb-2 ms-2 fs-5"
+                    style="color: red"
+                  ></p>
+                </div>
+                <!-- Person -->
+                <div class="renderPerson">
+                  <!-- Student -->
+                  <div class="row inputStudent fs-4" style="display: none">
+                    <!-- Toán -->
+                    <div class="mb-3 col-4">
+                      <label for="" class="form-label">Điểm toán</label>
+                      <input
+                        type="number"
+                        class="form-control"
+                        name=""
+                        id="nhapDiemToan"
+                        aria-describedby="helpId"
+                        placeholder=""
+                      />
+                      <p
+                        id=""
+                        class="text-start mt-1 mb-2 ms-2 fs-5"
+                        style="color: red"
+                      ></p>
+                    </div>
+                    <!-- Lý -->
+                    <div class="mb-3 col-4">
+                      <label for="" class="form-label">Điểm lý</label>
+                      <input
+                        type="number"
+                        class="form-control"
+                        name=""
+                        id="nhapDiemLy"
+                        aria-describedby="helpId"
+                        placeholder=""
+                      />
+                      <p
+                        id=""
+                        class="text-start mt-1 mb-2 ms-2 fs-5"
+                        style="color: red"
+                      ></p>
+                    </div>
+                    <!-- Hóa -->
+                    <div class="mb-3 col-4">
+                      <label for="" class="form-label">Điểm hóa</label>
+                      <input
+                        type="number"
+                        class="form-control"
+                        name=""
+                        id="nhapDiemHoa"
+                        aria-describedby="helpId"
+                        placeholder=""
+                      />
+                      <p
+                        id=""
+                        class="text-start mt-1 mb-2 ms-2 fs-5"
+                        style="color: red"
+                      ></p>
+                    </div>
+                  </div>
+                  <!-- Employee -->
+                  <div class="inputEmployee row fs-4" style="display: none">
+                    <!-- Số ngày làm việc -->
+                    <div class="mb-3 col-6">
+                      <label for="" class="form-label">Số ngày làm việc:</label>
+                      <input
+                        type="number"
+                        class="form-control"
+                        name=""
+                        id="nhapSoNgayLam"
+                        aria-describedby="helpId"
+                        placeholder=""
+                      />
+                      <p
+                        id=""
+                        class="text-start mt-1 mb-2 ms-2 fs-5"
+                        style="color: red"
+                      ></p>
+                    </div>
+                    <!-- Lương một ngày -->
+                    <div class="mb-3 col-6">
+                      <label for="" class="form-label">Lương một ngày:</label>
+                      <input
+                        type="number"
+                        class="form-control"
+                        name=""
+                        id="nhapLuongTheoNgay"
+                        aria-describedby="helpId"
+                        placeholder=""
+                      />
+                      <p
+                        id=""
+                        class="text-start mt-1 mb-2 ms-2 fs-5"
+                        style="color: red"
+                      ></p>
+                    </div>
+                  </div>
+                  <!-- Customer -->
+                  <div class="inputCustomer row fs-4" style="display: none">
+                    <!-- Tên công ty -->
+                    <div class="mb-3 col-8">
+                      <label for="" class="form-label">Tên công ty:</label>
+                      <input
+                        type="text"
+                        class="form-control"
+                        name=""
+                        id="nhapTenCongTy"
+                        aria-describedby="helpId"
+                        placeholder=""
+                      />
+                      <p
+                        id=""
+                        class="text-start mt-1 mb-2 ms-2 fs-5"
+                        style="color: red"
+                      ></p>
+                    </div>
+                    <!-- Giá trị hóa đơn -->
+                    <div class="mb-3 col-4">
+                      <label for="" class="form-label">Giá trị hóa đơn:</label>
+                      <input
+                        type="number"
+                        class="form-control"
+                        name=""
+                        id="nhapGiaTriHoaDon"
+                        aria-describedby="helpId"
+                        placeholder=""
+                      />
+                      <p
+                        id=""
+                        class="text-start mt-1 mb-2 ms-2 fs-5"
+                        style="color: red"
+                      ></p>
+                    </div>
+                  </div>
+                  <!-- Đánh giá -->
+                  <div class="mb-3 fs-4" style="display: none">
+                    <label for="" class="form-label">Đánh giá</label>
+                    <textarea
+                      class="form-control"
+                      name=""
+                      id="nhapDanhGia"
+                      rows="3"
+                    ></textarea>
+                  </div>
                 </div>
               </div>
-            </div>
+            </form>
+            
             <div class="modal-footer">
               <button
-              id="  "
+              id="btnClose"
                 type="button"
                 class="btn btn-secondary fs-4"
                 data-bs-dismiss="modal"
@@ -305,6 +308,7 @@
                 id="btnCapNhatPerson"
                 type="button"
                 class="btn btn-success fs-4"
+                style="display: none;"
               >
                 Cập nhật
               </button>
