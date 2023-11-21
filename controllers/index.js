@@ -1,4 +1,4 @@
-import { Person } from "../models/Person.js";
+import { Person, Student } from "../models/Person.js";
 import { ListPerson } from "../models/ListPerson.js";
 
 document.getElementById("chonDTId").onchange = (event) => {
@@ -77,23 +77,49 @@ const hienThiPerson = (arr = listPerson.arrListPerson) => {
   for (let person of arr) {
     let personNew = new Person();
     Object.assign(personNew, person);
-    // làm sao để truyền tinhDiemTrungBinh và tinhLuong vào hàm đoạn này anh
-    const { nhapMaId, nhapTenId, nhapDiaChiId, nhapEmailId, chonDTId} =
+    const { nhapMaId, nhapTenId, nhapDiaChiId, nhapEmailId, chonDTId } =
       personNew;
-    content += `
+    let studentNew = new Student();
+    Object.assign(studentNew, person);
+    const { nhapDiemHoa, nhapDiemLy, nhapDiemToan, tinhDiemTrungBinh} =
+      studentNew;
+      console.log(tinhDiemTrungBinh())
+    if (chonDTId == "Student") {
+      content += `
     <tr style="vertical-align: middle;">
     <th class="text-center">${nhapMaId}</th>
     <th>${nhapTenId}</th>
     <th>${nhapDiaChiId}</th>
     <th>${nhapEmailId}</th>
     <th>${chonDTId}</th>
-    <th></th>
+    <th>
+    Điểm Toán: ${nhapDiemToan}
+    Điểm Lý: ${nhapDiemLy}
+    Điểm Hóa: ${nhapDiemHoa}
+    Điểm trung bình: ${tinhDiemTrungBinh()}
+    </th>
     <th class="text-center" style="display: flex; justify-content: space-evenly;">
       <button onclick="layThongTinPerson('${nhapMaId}')" class="px-3 py-2 fs-4 border-0" style="border-radius: 10px; background-color: greenyellow;"><i class="fa-solid fa-pen-to-square"></i></button>
       <button onclick="xoaPerson('${nhapMaId}')" class="px-3 py-2 fs-4 border-0" style="border-radius: 10px; background-color: red;"><i class="fa-solid fa-trash-can"></i></button>
     </th>
   </tr>
     `;
+    } else {
+      content += `
+      <tr style="vertical-align: middle;">
+      <th class="text-center">${nhapMaId}</th>
+      <th>${nhapTenId}</th>
+      <th>${nhapDiaChiId}</th>
+      <th>${nhapEmailId}</th>
+      <th>${chonDTId}</th>
+      <th></th>
+      <th class="text-center" style="display: flex; justify-content: space-evenly;">
+        <button onclick="layThongTinPerson('${nhapMaId}')" class="px-3 py-2 fs-4 border-0" style="border-radius: 10px; background-color: greenyellow;"><i class="fa-solid fa-pen-to-square"></i></button>
+        <button onclick="xoaPerson('${nhapMaId}')" class="px-3 py-2 fs-4 border-0" style="border-radius: 10px; background-color: red;"><i class="fa-solid fa-trash-can"></i></button>
+      </th>
+    </tr>
+      `;
+    }
   }
   document.getElementById("renderListStudent").innerHTML = content;
 };

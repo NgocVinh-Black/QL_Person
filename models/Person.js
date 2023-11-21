@@ -8,7 +8,7 @@ export class Person {
   }
 }
 
-class Student extends Person {
+export class Student extends Person {
   constructor() {
     super();
     this.nhapDiemToan = "";
@@ -22,7 +22,7 @@ class Student extends Person {
   };
 }
 
-class Employee extends Person {
+export class Employee extends Person {
   constructor() {
     super();
     this.nhapSoNgayLam = "";
@@ -34,7 +34,7 @@ class Employee extends Person {
   };
 }
 
-class Customer extends Person {
+export class Customer extends Person {
   constructor() {
     super();
     this.nhapTenCongTy = "";
