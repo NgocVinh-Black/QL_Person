@@ -147,13 +147,17 @@
                 <!-- Person -->
                 <div class="renderPerson">
                   <!-- Student -->
-                  <div id="renderStudent" class="row inputStudent fs-4" style="display: none">
+                  <div
+                    id="renderStudent"
+                    class="row inputStudent fs-4"
+                    style="display: none"
+                  >
                     <!-- Toán -->
                     <div class="mb-3 col-4">
                       <label for="" class="form-label">Điểm toán</label>
                       <input
                         type="number"
-                        class="form-control"
+                        class="form-control fs-5"
                         name=""
                         id="nhapDiemToan"
                         aria-describedby="helpId"
@@ -170,7 +174,7 @@
                       <label for="" class="form-label">Điểm lý</label>
                       <input
                         type="number"
-                        class="form-control"
+                        class="form-control fs-5"
                         name=""
                         id="nhapDiemLy"
                         aria-describedby="helpId"
@@ -187,7 +191,7 @@
                       <label for="" class="form-label">Điểm hóa</label>
                       <input
                         type="number"
-                        class="form-control"
+                        class="form-control fs-5"
                         name=""
                         id="nhapDiemHoa"
                         aria-describedby="helpId"
@@ -201,7 +205,11 @@
                     </div>
                   </div>
                   <!-- Employee -->
-                  <div id="renderEmployee" class="inputEmployee row fs-4" style="display: none">
+                  <div
+                    id="renderEmployee"
+                    class="inputEmployee row fs-4"
+                    style="display: none"
+                  >
                     <!-- Số ngày làm việc -->
                     <div class="mb-3 col-6">
                       <label for="" class="form-label">Số ngày làm việc:</label>
@@ -238,7 +246,11 @@
                     </div>
                   </div>
                   <!-- Customer -->
-                  <div id="renderCustomer" class="inputCustomer row fs-4" style="display: none">
+                  <div
+                    id="renderCustomer"
+                    class="inputCustomer row fs-4"
+                    style="display: none"
+                  >
                     <!-- Tên công ty -->
                     <div class="mb-3 col-8">
                       <label for="" class="form-label">Tên công ty:</label>
@@ -275,7 +287,11 @@
                     </div>
                   </div>
                   <!-- Đánh giá -->
-                  <div id="renderDanhGia" class="mb-3 fs-4" style="display: none">
+                  <div
+                    id="renderDanhGia"
+                    class="mb-3 fs-4"
+                    style="display: none"
+                  >
                     <label for="" class="form-label">Đánh giá</label>
                     <textarea
                       class="form-control"
@@ -287,10 +303,10 @@
                 </div>
               </div>
             </form>
-            
+
             <div class="modal-footer">
               <button
-              id="btnClose"
+                id="btnClose"
                 type="button"
                 class="btn btn-secondary fs-4"
                 data-bs-dismiss="modal"
@@ -308,7 +324,7 @@
                 id="btnCapNhatPerson"
                 type="button"
                 class="btn btn-success fs-4"
-                style="display: none;"
+                style="display: none"
               >
                 Cập nhật
               </button>
@@ -317,7 +333,7 @@
         </div>
       </div>
       <!-- Search -->
-      <div class="mb-3 mt-3">
+      <!-- <div class="mb-3 mt-3" style="">
         <input
           type="text"
           class="form-control fs-5"
@@ -326,22 +342,39 @@
           aria-describedby="helpId"
           placeholder="Search"
         />
+      </div> -->
+      <div class="row">
+        <!-- All -->
+        <div class="mb-3 my-3 col-4">
+          <select
+            class="form-select form-select-lg fs-5"
+            name=""
+            id="renderFilter"
+          >
+            <option value="">All</option>
+            <option value="Student">Student</option>
+            <option value="Employee">Employee</option>
+            <option value="Customer">Customer</option>
+          </select>
+        </div>
+        <!-- Sắp xếp -->
+        <div class="col-4 py-3">
+          <button
+            id="sapXep"
+            type="button"
+            class="btn btn-primary fs-5"
+          >
+            Sắp xếp
+          </button>
+        </div>
       </div>
-      <!-- All -->
-      <div class="mb-3">
-        <select class="form-select form-select-lg fs-5 w-25" name="" id="renderFilter">
-          <option value="">All</option>
-          <option value="Student">Student</option>
-          <option value="Employee">Employee</option>
-          <option value="Customer">Customer</option>
-        </select>
-      </div>
+
       <!-- Table -->
 
       <table class="table table-bordered table-sm">
         <thead>
           <tr class="bg-primary text-center text-white fs-5">
-            <th class="py-3">Mã</th>
+            <th class="py-3" style="">Mã</th>
             <th class="py-3">Họ và tên</th>
             <th class="py-3">Địa chỉ</th>
             <th class="py-3">Email</th>
@@ -379,7 +412,11 @@
       integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz"
       crossorigin="anonymous"
     ></script>
-    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+    <script
+      src="https://code.jquery.com/jquery-3.7.1.js"
+      integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
+      crossorigin="anonymous"
+    ></script>
 
     <script type="module" src="./controllers/index.js"></script>
   </body>

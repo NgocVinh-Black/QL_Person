@@ -29,7 +29,7 @@ export class Employee extends Person {
     this.nhapLuongTheoNgay = "";
   }
   tinhLuong = () => {
-    let luong = this.nhapSoNgayLam * this.nhapLuongTheoNgay;
+    let luong = this.nhapSoNgayLam * 1 * this.nhapLuongTheoNgay * 1;
     return luong;
   };
 }
