@@ -30,6 +30,10 @@ document.getElementById("chonDTId").onchange = (event) => {
 };
 
 const layoutThemPerson = () => {
+  document.getElementById("renderCustomer").style.display = "none";
+  document.getElementById("renderEmployee").style.display = "none";
+  document.getElementById("renderStudent").style.display = "none";
+  document.getElementById("renderDanhGia").style.display = "none";
   document.getElementById("btnCapNhatPerson").style.display = "none";
   document.getElementById("btnThemPerson").style.display = "block";
   document.getElementById("inputForm").reset();
@@ -81,9 +85,8 @@ const hienThiPerson = (arr = listPerson.arrListPerson) => {
       personNew;
     let studentNew = new Student();
     Object.assign(studentNew, person);
-    const { nhapDiemHoa, nhapDiemLy, nhapDiemToan, tinhDiemTrungBinh} =
+    const { nhapDiemHoa, nhapDiemLy, nhapDiemToan, tinhDiemTrungBinh } =
       studentNew;
-      console.log(tinhDiemTrungBinh())
     if (chonDTId == "Student") {
       content += `
     <tr style="vertical-align: middle;">
@@ -156,6 +159,7 @@ const layThongTinPerson = (id) => {
   document.getElementById("btnCapNhatPerson").style.display = "block";
   document.getElementById("btnThemPerson").style.display = "none";
   const person = listPerson.layThongTinPerson(id);
+  console.log(person);
   const arrField = document.querySelectorAll(
     "#inputId input, #inputId select, #inputId textarea"
   );
@@ -165,7 +169,24 @@ const layThongTinPerson = (id) => {
       field.readOnly = true;
     }
   }
-  // document.getElementById("btnThemNguoiDung").click();
+  if (person.chonDTId == "Student") {
+    document.getElementById("renderStudent").style.display = "flex";
+    document.getElementById("renderCustomer").style.display = "none";
+    document.getElementById("renderEmployee").style.display = "none";
+    document.getElementById("renderDanhGia").style.display = "none";
+  }
+  if (person.chonDTId == "Employee") {
+    document.getElementById("renderEmployee").style.display = "flex";
+    document.getElementById("renderCustomer").style.display = "none";
+    document.getElementById("renderStudent").style.display = "none";
+    document.getElementById("renderDanhGia").style.display = "none";
+  }
+  if (person.chonDTId == "Customer") {
+    document.getElementById("renderCustomer").style.display = "flex";
+    document.getElementById("renderEmployee").style.display = "none";
+    document.getElementById("renderStudent").style.display = "none";
+    document.getElementById("renderDanhGia").style.display = "block";
+  }
   $("#exampleModal").modal("show");
 };
 

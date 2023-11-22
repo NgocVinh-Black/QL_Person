@@ -17,7 +17,7 @@ export class Student extends Person {
   }
   tinhDiemTrungBinh = () => {
     let diemTrungBinh =
-      (this.nhapDiemHoa + this.nhapDiemLy + this.nhapDiemToan) / 3;
+      (this.nhapDiemHoa * 1 + this.nhapDiemLy * 1 + this.nhapDiemToan * 1) / 3;
     return diemTrungBinh;
   };
 }
